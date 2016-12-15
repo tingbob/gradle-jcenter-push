@@ -85,6 +85,7 @@ bintray {
         desc = POM_DESCRIPTION
         websiteUrl = POM_URL
         vcsUrl = POM_GIT_URL
+        licenses = ALL_LICENCES
         publish = true
         publicDownloadNumbers = true
         version {
