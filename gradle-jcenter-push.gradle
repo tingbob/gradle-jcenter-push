@@ -40,7 +40,6 @@ install {
 }
 
 apply plugin: 'com.jfrog.bintray'
-apply plugin: 'maven'
 
 version = VERSION_NAME
 
@@ -71,22 +70,13 @@ artifacts {
     archives sourcesJar
 }
 
-def getRepositoryUsername() {
-    return hasProperty('BINTRAY_USERNAME') ? BINTRAY_USERNAME : ""
-}
-
-def getRepositoryPassword() {
-    return hasProperty('BINTRAY_PASSWORD') ? BINTRAY_PASSWORD : ""
-}
-
-def getGPGPassword() {
-    return hasProperty('GPG_PASSWORD') ? GPG_PASSWORD : ""
-}
+// Bintray
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
 bintray {
-    user = getRepositoryUsername
-    key = getRepositoryPassword
-    gpgpassword = getGPGPassword
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
 
     configurations = ['archives']
     pkg {
@@ -102,7 +92,7 @@ bintray {
             desc = POM_DESCRIPTION
             gpg {
                 sign = true //Determines whether to GPG sign the files. The default is false
-                passphrase = getGPGPassword
+                passphrase = properties.getProperty("bintray.gpg.password")
                 //Optional. The passphrase for GPG signing'
             }
         }
