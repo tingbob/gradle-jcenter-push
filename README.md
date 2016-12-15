@@ -73,3 +73,5 @@ allprojects {
 ```properties
 apply from: 'https://raw.github.com/tingbob/gradle-jcenter-push/master/gradle-jcenter-push.gradle'
 ```
+
+#Enjoy
