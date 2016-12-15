@@ -40,6 +40,7 @@ install {
 }
 
 apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
 
 version = VERSION_NAME
 
