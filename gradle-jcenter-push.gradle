@@ -85,6 +85,7 @@ def getGPGPassword() {
 bintray {
     user = getRepositoryUsername
     key = getRepositoryPassword
+    gpgpassword = getGPGPassword
 
     configurations = ['archives']
     pkg {
@@ -93,7 +94,7 @@ bintray {
         desc = POM_DESCRIPTION
         websiteUrl = POM_URL
         vcsUrl = POM_GIT_URL
-        licenses = allLicenses
+        licenses = ALL_LICENCES
         publish = true
         publicDownloadNumbers = true
         version {
