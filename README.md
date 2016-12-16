@@ -29,7 +29,7 @@ POM_DEVELOPER_EMAIL=tingbob@hotmail.com
 
 BINTRAY_REPO=maven
 POM_GIT_URL=scm:git@github.com:tingbob/TestLib.git
-# If you have multiple protocal, 
+# If you have multiple protocols, 
 # you should define like this: ALL_LICENCES=A,B,C
 ALL_LICENCES=Apache-2.0
 ```
