@@ -75,7 +75,7 @@ allprojects {
 apply from: 'https://raw.github.com/tingbob/gradle-jcenter-push/master/gradle-jcenter-push.gradle'
 ```
 ###Terminal command line
-####Check the package valid
+####Check the package validity
 ./gradlew install
 ####Upload to JCenter
 ./gradlew bintrayUpload
