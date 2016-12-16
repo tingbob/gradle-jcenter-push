@@ -1,16 +1,15 @@
 # gradle-jcenter-push
-###上传JCenter插件
-###参考
+###Upload JCenter plugin
+###Reference and English docs
 https://github.com/nuuneoi/JCenter
 
 https://github.com/chrisbanes/gradle-mvn-push
-###变量定义参考gradle-mvn-push，都在gradle.properties与local.properties
-###project sample
-https://github.com/tingbob/TestLib
-###文档指引
+###Chinese doc guide for nuuneoi
 http://www.jianshu.com/p/3c63ae866e52
-
-##Project gradle.properties
+####Parameters definition is similar to gradle-mvn-push. The global parameters are located in gradle.properties and local.properties
+###Project sample
+https://github.com/tingbob/TestLib
+###Project gradle.properties
 
 ```properties
 VERSION_NAME=0.0.1
@@ -30,24 +29,26 @@ POM_DEVELOPER_EMAIL=tingbob@hotmail.com
 
 BINTRAY_REPO=maven
 POM_GIT_URL=scm:git@github.com:tingbob/TestLib.git
-# 如果有多个协议，逗号隔开，比如ALL_LICENCES=A,B,C
+# If you have multiple protocal, 
+# you should define like this: ALL_LICENCES=A,B,C
 ALL_LICENCES=Apache-2.0
 ```
 
-##Your upload library gradle.properties
+###Your upload module library gradle.properties
 ```properties
 POM_NAME=TestLib
 POM_ARTIFACT_ID=testlib
 POM_PACKAGING=aar
 ```
 
-##Your local properties
+###Your local properties
 ```properties
 bintray.user=tingbob
 bintray.apikey=xxxxxx
+# If you want to upload to Maven Central
 bintray.gpg.password=xxxxxx
 ```
-##Your project build.gradle
+###Your project build.gradle
 ```properties
 buildscript {
     ......
@@ -69,9 +70,13 @@ allprojects {
 }
 ```
 
-##Your upload module build.gradle
+###Your upload module build.gradle
 ```properties
 apply from: 'https://raw.github.com/tingbob/gradle-jcenter-push/master/gradle-jcenter-push.gradle'
 ```
-
+###Terminal command line
+####Check the package valid
+./gradlew install
+####Upload to JCenter
+./gradlew bintrayUpload
 #Enjoy
