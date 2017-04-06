@@ -1,15 +1,15 @@
 # gradle-jcenter-push
-###Upload JCenter plugin
-###Reference and English docs
+### Upload JCenter plugin
+### Reference and English docs
 https://github.com/nuuneoi/JCenter
 
 https://github.com/chrisbanes/gradle-mvn-push
-###Chinese doc guide for nuuneoi
+### Chinese doc guide for nuuneoi
 http://www.jianshu.com/p/3c63ae866e52
-####Parameters definition is similar to gradle-mvn-push. The global parameters are located in gradle.properties and local.properties
-###Project sample
+#### Parameters definition is similar to gradle-mvn-push. The global parameters are located in gradle.properties and local.properties
+### Project sample
 https://github.com/tingbob/TestLib
-###Project gradle.properties
+### Project gradle.properties
 
 ```properties
 VERSION_NAME=0.0.1
@@ -34,21 +34,21 @@ POM_GIT_URL=scm:git@github.com:tingbob/TestLib.git
 ALL_LICENCES=Apache-2.0
 ```
 
-###Your upload module library gradle.properties
+### Your upload module library gradle.properties
 ```properties
 POM_NAME=TestLib
 POM_ARTIFACT_ID=testlib
 POM_PACKAGING=aar
 ```
 
-###Your local properties
+### Your local properties
 ```properties
 bintray.user=tingbob
 bintray.apikey=xxxxxx
 # If you want to upload to Maven Central
 bintray.gpg.password=xxxxxx
 ```
-###Your project build.gradle
+### Your project build.gradle
 ```properties
 buildscript {
     ......
@@ -70,13 +70,13 @@ allprojects {
 }
 ```
 
-###Your upload module build.gradle
+### Your upload module build.gradle
 ```properties
 apply from: 'https://raw.github.com/tingbob/gradle-jcenter-push/master/gradle-jcenter-push.gradle'
 ```
-###Terminal command line
-####Check the package validity
+### Terminal command line
+#### Check the package validity
 ./gradlew install
-####Upload to JCenter
+#### Upload to JCenter
 ./gradlew bintrayUpload
-#Enjoy
+# Enjoy
